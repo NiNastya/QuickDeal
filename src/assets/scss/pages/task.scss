@@ -1,0 +1,30 @@
+.task {
+    @include sm-block() {}
+    height: 100vh;
+    overflow-y: auto;
+    &-list {
+        margin: 32px 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        &__item {
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            &-check {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

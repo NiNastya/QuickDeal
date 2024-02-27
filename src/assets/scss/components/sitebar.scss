@@ -1,0 +1,26 @@
+.sitebar {
+    border-right: 1px solid #eee;
+    &-logo {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    nav {
+        margin: 32px 0;
+        a {
+            padding: 10px 16px;
+            width: 100%;
+            display: block;
+            &:hover {
+                background: rgba($color: #fff, $alpha: 0.3);
+            }
+        }
+    }
+    button {
+        margin: 16px;
+        font-size: 12px;
+    }
+}

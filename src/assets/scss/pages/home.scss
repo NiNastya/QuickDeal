@@ -1,0 +1,23 @@
+.home {
+    @include sm-block() {}
+    height: 100vh;
+    overflow-y: auto;
+    &-tasks {
+        margin: 32px 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 16px;
+        a {
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: 700;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            &:hover {
+                background: #E2A300;
+                color: #000;
+                border-color: #E2A300;
+            }
+        }
+    }
+}

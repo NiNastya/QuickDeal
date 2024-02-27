@@ -1,0 +1,11 @@
+@import "fonts.scss";
+@import "helpers/reset.scss";
+@import "helpers/mixin.scss";
+
+@import "config.scss";
+
+@import "components/sitebar.scss";
+@import "components/modal.scss";
+
+@import "pages/home.scss";
+@import "pages/task.scss";
