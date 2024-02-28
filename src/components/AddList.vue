@@ -28,7 +28,7 @@ function Add() {
     <div class="modal" @click="store.dispatch('setModal', '');">
         <div class="modal-block" @click.stop="">
             <h3>Добавить список задач</h3>
-            <form action="" @submit.prevent="Add()">
+            <form @submit.prevent="Add()">
                 <label for="title" :class="{error: err.title }">
                     <p>Название</p>
                     <input type="text" v-model="add.title" id="title">

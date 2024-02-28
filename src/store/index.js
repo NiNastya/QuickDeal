@@ -13,9 +13,29 @@ export default createStore({
             state.tasks.push(task);
             localStorage.setItem('task', JSON.stringify(state.tasks))
         },
-        deleteTask(state, index) {
-            state.tasks.splice(index, 1);
+        addTask(state, item) { 
+            state.tasks.forEach(e => {
+                if (item.id == e.id) {
+                    item.tasks.forEach(a => {
+                        e.tasks.push(a)
+                    })
+                }
+            })
+            localStorage.setItem('task', JSON.stringify(state.tasks))
         },
+        editTask(state, item) {
+            state.tasks.forEach(e => {
+                if (item.id == e.id) {
+                    e = item
+                }
+            })
+            localStorage.setItem('task', JSON.stringify(state.tasks))
+        },
+        deliteList(state, index) {
+            state.tasks.splice(index, 1);
+            localStorage.setItem('task', JSON.stringify(state.tasks))
+        },
+        
         setModal(state, item) {
             state.modal = item;
         },
@@ -68,6 +88,12 @@ export default createStore({
         addTaskList({ commit }, task) {
             commit('addTaskList', task);
         },
+        addTask({ commit }, item) {
+            commit('addTask', item);
+        },
+        editTask({ commit }, item) {
+            commit('editTask', item);
+        },
         deleteTask({ commit }, index) {
             commit('deleteTask', index);
         },
@@ -76,6 +102,9 @@ export default createStore({
         },
         InitTask({ commit }, item) {
             commit('InitTask', item);
+        },
+        deliteList({ commit }, item) {
+            commit('deliteList', item);
         },
         TestData({ commit }) {
             console.log('TestData')

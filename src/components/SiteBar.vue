@@ -6,7 +6,6 @@ import { useStore } from 'vuex';
 import { computed } from 'vue';
 
 const store = useStore();
-const modal = computed(() => store.state.modal);
 const tasks = computed(() => store.state.tasks);
 </script>
 
@@ -14,7 +13,7 @@ const tasks = computed(() => store.state.tasks);
     <div class="sitebar">
         <router-link :to="{ name: 'Home' }" class="sitebar-logo">
             <Logo />
-            MyProtfolio
+            Task Manager
         </router-link>
         <div class="sitebar-list" v-if="tasks.length">
             <nav :class="{ active: burger }" @click="burger = !burger">
