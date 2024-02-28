@@ -37,6 +37,9 @@
                 margin-bottom: 5px;
                 cursor: pointer;
             }
+            &.error {
+                color: red;
+            }
         }
         .add {
             width: 100%;
@@ -48,6 +51,11 @@
             font-size: 20px;
             margin: 16px 0;
             cursor: pointer;
+        }
+        .delite {
+            cursor: pointer;
+            color: red;
+            font-size: 12px;
         }
     }
 }

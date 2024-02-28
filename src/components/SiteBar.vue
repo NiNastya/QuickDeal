@@ -2,6 +2,12 @@
 import { ref } from 'vue'
 import Logo from './Logo.vue'
 const burger = ref(false)    
+import { useStore } from 'vuex';
+import { computed } from 'vue';
+
+const store = useStore();
+const modal = computed(() => store.state.modal);
+const tasks = computed(() => store.state.tasks);
 </script>
 
 <template>
@@ -10,10 +16,15 @@ const burger = ref(false)
             <Logo />
             MyProtfolio
         </router-link>
-        <nav :class="{active: burger}" @click="burger = !burger">
-            <router-link :to="{ name: 'TaskId', params: { id: 1 } }">Какой то таск</router-link>
-        </nav>
-        <button>Добавить список задач</button>
+        <div class="sitebar-list" v-if="tasks.length">
+            <nav :class="{ active: burger }" @click="burger = !burger">
+                <router-link :to="{ name: 'TaskId', params: { id: item.id } }" v-for="item in tasks" :key="item.id">{{ item.title }}</router-link>
+            </nav>
+        </div>
+        <div class="sitebar-null" v-else>У вас нету списков задач</div>
+        <button @click="store.dispatch('setModal', 'addList');">Добавить список задач</button>
+        <button @click="store.dispatch('TestData');" v-if="!tasks.length">Загрузить тестовые данные</button>
+        <button @click="store.dispatch('AllDelite');"  v-if="tasks.length">Удалить все</button>
         <div class="sitebar-burger" @click="burger = !burger">
             <span></span>
             <span></span>

@@ -25,6 +25,13 @@
                 align-items: center;
                 justify-content: center;
             }
+            p {
+                width:calc(100% - 76px);
+            }
+            .delite {
+                color: red;
+                cursor: pointer;
+            }
         }
     }
 }
