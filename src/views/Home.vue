@@ -10,7 +10,6 @@ const store = useStore();
     <section class="home">
         <div class="container">
             <h1>Добро пожаловать в менеджер задач</h1>
-            {{ modal }}
             <div class="home-tasks">
                 <div class="home-task" v-for="(item, i) in tasks" :key="item.id">
                     <router-link :to="{ name: 'TaskId', params: { id: item.id } }">№{{ i + 1 }} {{ item.title }}</router-link>
