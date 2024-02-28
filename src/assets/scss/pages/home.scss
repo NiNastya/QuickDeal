@@ -1,5 +1,4 @@
 .home {
-    @include sm-block() {}
     height: 100vh;
     overflow-y: auto;
     &-tasks {

@@ -107,7 +107,6 @@ export default createStore({
             commit('deliteList', item);
         },
         TestData({ commit }) {
-            console.log('TestData')
             commit('TestData');
         },
         AllDelite({ commit }) {

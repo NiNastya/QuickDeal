@@ -13,7 +13,6 @@ const add = ref({
 const err = ref({})
 
 function Add() {
-    console.log(tasks.value.length)
     if (add.value.title) {
         add.value.id = tasks.value.length + 1
         store.dispatch('addTaskList', add.value);

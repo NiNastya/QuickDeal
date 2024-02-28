@@ -1,5 +1,4 @@
 .task {
-    @include sm-block() {}
     height: 100vh;
     overflow-y: auto;
     &-list {
